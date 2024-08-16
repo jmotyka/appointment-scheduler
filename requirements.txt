@@ -1,0 +1,8 @@
+pytest
+fastapi
+sqlalchemy
+ipython
+pydantic
+typing_inspect
+pytest-asyncio
+fastapi-utils
