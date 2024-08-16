@@ -1,4 +1,3 @@
-import asyncio
 import logging
 
 from sqlalchemy.orm import Session
@@ -9,7 +8,7 @@ from fastapi_utils.session import FastAPISessionMaker
 from fastapi_utils.tasks import repeat_every
 
 from app.background import remove_expired_appointments
-from app.database import init_db, get_db, get_async_db, SQLALCHEMY_DATABASE_URL, SessionLocal
+from app.database import init_db, get_db, SQLALCHEMY_DATABASE_URL, SessionLocal
 from app.models.appointments import Appointment
 from app.views.appointments import router as appointment_router
 from app.views.clients import router as client_router

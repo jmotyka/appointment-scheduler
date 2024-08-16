@@ -1,4 +1,3 @@
-import asyncio
 import datetime
 
 from fastapi import Depends

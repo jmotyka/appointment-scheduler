@@ -29,10 +29,3 @@ def get_db():
         yield db
     finally:
         db.close()
-
-def get_async_db():
-    db = AsyncSessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
