@@ -36,7 +36,7 @@ def startup_event():
 @repeat_every(seconds=5, logger=logger)
 def remove_expired_tokens_task() -> None:
     with SessionLocal() as db:
-        remove_expired_appointments(db, 0.1)
+        remove_expired_appointments(db, 30)
 
 
 @app.get("/ping/")
