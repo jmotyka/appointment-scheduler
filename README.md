@@ -1,22 +1,22 @@
 # appointment-scheduler
-API for allowing providers to specify which times they are available and for clients to schedule appointments
+API for allowing providers to specify which times they are available and for clients to schedule appointments.
 
 ## Setup
 1. Must have python>=3.10 installed.
-2. Run `python3.10 -m venv .VENV && source .VENV/bin/activate && pip install -r requirements.txt`
-3. Start server using `cd app && fastapi dev main.py`
+2. Run `python3.10 -m venv .VENV && source .VENV/bin/activate && pip install -r requirements.txt`.
+3. Start server using `cd app && fastapi dev main.py`.
 
 ## Requirements
-1. Clients can register themselves using `http://localhost:8000/api/clients`
-2. Providers can register themselves using `http://localhost:8000/api/providers`
-3. Providers can submit their availability in 15 minute windows using `http://localhost:8000/api/appoinments/availability`
+1. Clients can register themselves using `http://localhost:8000/api/clients`.
+2. Providers can register themselves using `http://localhost:8000/api/providers`.
+3. Providers can submit their availability in 15 minute windows using `http://localhost:8000/api/appoinments/availability`.
 4. Clients can find available appointments using `http://localhost:8000/api/appointments`. Clients will only see appointments they can reserve that are 24 hours in the future.
-5. Clients can reserve an appointment using `http://localhost:8000/api/appointments/reserve`
-6. Clients can confirm an appointment using `http://localhost:8000/api/appointments/confirm`
+5. Clients can reserve an appointment using `http://localhost:8000/api/appointments/reserve`.
+6. Clients can confirm an appointment using `http://localhost:8000/api/appointments/confirm`.
 7. Every 5 seconds, a background process runs to remove client reservations that have not been confirmed in over 30 minutes.
 
 ## Database
-I used an in-memory SQLite database for this exercise. A more robust application should use a persistent database solution such as .
+I used an in-memory SQLite database for this exercise. A more robust application should use a persistent database solution such as PostgresSQL.
 
 The schema consists of 3 tables:
 1. providers:
